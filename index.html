@@ -6,6 +6,7 @@
     <title>Minha Loja Virtual</title>
     <link rel="stylesheet" href="./styles/style.css">
     <link rel="stylesheet" href="./styles/anuncio.css">
+    <link rel="stylesheet" href="./styles/slide.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 </head>
 <body>
@@ -28,16 +29,18 @@
                 <li><a href="../index.html"><i class="fas fa-home"></i> categorias</a></li>
                 <li><a href="../links/curriculo.html"><i class="fas fa-user"></i> Conta</a></li>
                 <li><a href="../links/projetos.html"><i class="fas fa-comment"></i> central</a></li>
-                <li><a href="../links/projetos.html"><i class="fas fa-shopping-cart"></i> Carrinho</a></li>
+                <li><a href="carrinho.html"><i class="fas fa-shopping-cart"></i> Carrinho</a></li>
             </ul>
         </nav>
     </header>
     <main>
-        <section id="promocao">
+        <section id="promocao">            
+
             <h2 class="section-title">Promoção</h2>
             <div class="product-list">
                 <!-- ... -->
-            </div>
+            </div>   
+       
         </section>
 
         <section id="oferta">
@@ -54,6 +57,8 @@
             </div>
         </section>
 
+       
+
         <section id="redes">
             <h2 class="section-title">Redes Sociais</h2>
             <div class="social-icons">
@@ -65,9 +70,12 @@
                 <a href="https://api.whatsapp.com/send?phone=SEUNUMERODOTELEFONE" target="_blank" class="whatsapp-icon"><i class="fab fa-whatsapp"></i></a> 
             </div>
         </section> 
-    </main>
+    </main>    
+    <script src="./scripts/carrinho.js"></script>
     <script src="./scripts/promocao.js"></script>
     <script src="./scripts/oferta.js"></script>
     <script src="./scripts/produtos.js"></script>
+
 </body>
+
 </html>

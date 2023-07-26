@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minha Loja Virtual</title>
+    <link rel="stylesheet" href="./styles/style.css">
+    <link rel="stylesheet" href="./styles/anuncio.css">
+    <link rel="stylesheet" href="./styles/slide.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="profile-info">
+            <div class="profile-image">
+                <img src="./img/hely_music.svg" alt="Foto do Allan Carvalho Souza">
+            </div>
+            
+        </div>
+        <div class="search-bar">
+            <button class="search-btn"><i class="fas fa-search"></i></button>
+            <input type="text" placeholder="Pesquisar produtos...">
+           
+        </div>
+        <button id="toggle-nav-btn" class="toggle-nav-btn"><i class="fas fa-bars"></i></button>
+        <nav id="main-nav">
+            <ul>
+                <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="../index.html"><i class="fas fa-home"></i> categorias</a></li>
+                <li><a href="../links/curriculo.html"><i class="fas fa-user"></i> Conta</a></li>
+                <li><a href="../links/projetos.html"><i class="fas fa-comment"></i> central</a></li>
+                <li><a href="../links/projetos.html"><i class="fas fa-shopping-cart"></i> Carrinho</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+      
+        <section id="carrinho">
+            <h2 class="section-title">Carrinho de Compras</h2>
+            <div class="product-list">
+                <!-- Aqui serão exibidos os produtos no carrinho -->
+            </div>
+            <div id="total-itens">0</div>
+        </section>
+    </main>
+    
+    <script src="./scripts/carrinho.js"></script>
+    
+
+
+</body>
+</html>

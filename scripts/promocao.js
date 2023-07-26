@@ -7,7 +7,6 @@
     {name: "Produto 2",description: "Descrição do Produto 2",price: 49.99,image: "img/hely.svg"},
     {name: "Produto 2",description: "Descrição do Produto 2",price: 49.99,image: "img/hely.svg"},
     
-    
     // Adicione mais produtos aqui
 ];
 
@@ -36,6 +35,7 @@ products.forEach(product => {
     buyButton.classList.add("buy-btn");
     buyButton.textContent = "Comprar";
 
+  
     productItem.appendChild(productImage);
     productItem.appendChild(productName);
     productItem.appendChild(productDescription);
@@ -44,3 +44,30 @@ products.forEach(product => {
 
     productContainer.appendChild(productItem);
 });
+
+// Loop para adicionar evento de clique ao botão "Comprar"
+const buyButtons = document.querySelectorAll(".buy-btn");
+buyButtons.forEach((button, index) => {
+    button.addEventListener("click", () => {
+        const produto = products[index]; // Obtem o produto correspondente ao botão clicado
+        adicionarAoCarrinho(produto);
+    });
+});
+
+// Função para adicionar um produto ao carrinho
+function adicionarAoCarrinho(produto) {
+    const carrinho = obterCarrinhoDoLocalStorage();
+    carrinho.push(produto);
+    salvarCarrinhoNoLocalStorage(carrinho);
+    atualizarTotalItensCarrinho();
+}
+
+// Função para salvar o carrinho no LocalStorage
+function salvarCarrinhoNoLocalStorage(carrinho) {
+    const carrinhoJson = JSON.stringify(carrinho);
+    localStorage.setItem("carrinho", carrinhoJson);
+}
+
+
+
+
