@@ -45,28 +45,7 @@ products.forEach(product => {
     productContainer.appendChild(productItem);
 });
 
-// Loop para adicionar evento de clique ao botão "Comprar"
-const buyButtons = document.querySelectorAll(".buy-btn");
-buyButtons.forEach((button, index) => {
-    button.addEventListener("click", () => {
-        const produto = products[index]; // Obtem o produto correspondente ao botão clicado
-        adicionarAoCarrinho(produto);
-    });
-});
 
-// Função para adicionar um produto ao carrinho
-function adicionarAoCarrinho(produto) {
-    const carrinho = obterCarrinhoDoLocalStorage();
-    carrinho.push(produto);
-    salvarCarrinhoNoLocalStorage(carrinho);
-    atualizarTotalItensCarrinho();
-}
-
-// Função para salvar o carrinho no LocalStorage
-function salvarCarrinhoNoLocalStorage(carrinho) {
-    const carrinhoJson = JSON.stringify(carrinho);
-    localStorage.setItem("carrinho", carrinhoJson);
-}
 
 
 

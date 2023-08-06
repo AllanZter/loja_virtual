@@ -1,55 +1,68 @@
-// Função para adicionar um produto ao carrinho
-function adicionarAoCarrinho(produto) {
-    const carrinho = obterCarrinhoDoLocalStorage();
-    carrinho.push(produto);
-    salvarCarrinhoNoLocalStorage(carrinho);
-    atualizarTotalItensCarrinho();
-}
+//Limpa carrinho
+function limpar(){
+    localStorage.clear();
+    location.reload();
+};
 
-// Função para obter o carrinho do LocalStorage
-function obterCarrinhoDoLocalStorage() {
-    const carrinhoJson = localStorage.getItem("carrinho");
-    return carrinhoJson ? JSON.parse(carrinhoJson) : [];
-}
+const limparButton = document.getElementById("limpar");
+limparButton.addEventListener("click", limpar);
 
-// Função para salvar o carrinho no LocalStorage
-function salvarCarrinhoNoLocalStorage(carrinho) {
-    const carrinhoJson = JSON.stringify(carrinho);
-    localStorage.setItem("carrinho", carrinhoJson);
-}
+// Recupera os itens do localStorage
+const recuperarItensDoLocalStorage = () => {
+    const produtosRecuperados = [];
+  
+    for (let i = 0; i < localStorage.length; i++) {
+      const key = localStorage.key(i);
+      if (key.startsWith("selectedProduct_")) {
+        const product = JSON.parse(localStorage.getItem(key));
+        produtosRecuperados.push(product);
+      }
+    }
+  
+    return produtosRecuperados;
+  };
+  
+  //teste
+  const itensRecuperados = recuperarItensDoLocalStorage();
+  console.log(itensRecuperados);
 
-// Função para exibir os itens do carrinho na página de carrinho (carrinho.html)
-function exibirItensNoCarrinho() {
-    const carrinho = obterCarrinhoDoLocalStorage();
-    const carrinhoContainer = document.querySelector("#carrinho .carrinho-list");
-
-    carrinhoContainer.innerHTML = ""; // Limpa o conteúdo do carrinho para atualização
-
-    carrinho.forEach(produto => {
-        const produtoItem = document.createElement("div");
-        produtoItem.classList.add("produto-carrinho");
-
+    // Função para exibir os itens recuperados do localStorage
+    const exibirItensRecuperados = () => {
+        const produtosContainer = document.querySelector("#selectedProducts .product-list");
+    
+    
+        const itensRecuperados = recuperarItensDoLocalStorage(); 
+    
+        itensRecuperados.forEach(product => {
+        const productItem = document.createElement("div");
+        productItem.classList.add("product-item");
+    
+        const productImage = document.createElement("img");
+        productImage.src = product.image;
+        productImage.alt = product.name;
+    
         const productName = document.createElement("h3");
-        productName.textContent = produto.name;
-
+        productName.textContent = product.name;
+    
+        const productDescription = document.createElement("p");
+        productDescription.textContent = product.description;
+    
         const productPrice = document.createElement("span");
         productPrice.classList.add("price");
-        productPrice.textContent = `R$ ${produto.price.toFixed(2)}`;
-
-        produtoItem.appendChild(productName);
-        produtoItem.appendChild(productPrice);
-
-        carrinhoContainer.appendChild(produtoItem);
-    });
-}
-
-// Função para atualizar o total de itens no carrinho na página de carrinho (carrinho.html)
-function atualizarTotalItensCarrinho() {
-    const carrinho = obterCarrinhoDoLocalStorage();
-    const totalItens = carrinho.length;
-    const totalItensElement = document.querySelector("#total-itens");
-    totalItensElement.textContent = totalItens.toString();
-}
-
-// Chamando a função para exibir os itens do carrinho quando a página de carrinho for carregada
-exibirItensNoCarrinho();
+        productPrice.textContent = `R$ ${product.price.toFixed(2)}`;
+    
+       
+      
+        productItem.appendChild(productImage);
+        productItem.appendChild(productName);
+        productItem.appendChild(productDescription);
+        productItem.appendChild(productPrice);
+      
+        produtosContainer.appendChild(productItem);
+        });
+    };
+    
+    // Chamando a função para exibir os itens recuperados do localStorage ao carregar a página
+    exibirItensRecuperados();
+    
+  

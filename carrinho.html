@@ -8,6 +8,26 @@
     <link rel="stylesheet" href="./styles/anuncio.css">
     <link rel="stylesheet" href="./styles/slide.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+    <style>
+        #limpar{
+            margin-top: 15px;
+            padding: 10px 20px;
+            background-color: #e70e0e;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 24px;
+        }
+        #limpar:hover {
+            background-color: #0056b3;
+        }
+        #clear{
+            align-items: center;
+        }
+
+    </style>
 </head>
 <body>
     <header>
@@ -35,13 +55,19 @@
     </header>
     <main>
       
-        <section id="carrinho">
-            <h2 class="section-title">Carrinho de Compras</h2>
-            <div class="product-list">
+        <section id="selectedProducts">
+            <h2 class="section-title"><i class="fas fa-shopping-cart"></i>  Carrinho de Compras</h2>
+            <div class="product-list" id="cart-products">
                 <!-- Aqui serão exibidos os produtos no carrinho -->
             </div>
-            <div id="total-itens">0</div>
+            
         </section>
+        <section id="button_clear">
+              <div id="clear">
+                <button id="limpar"><i class="fas fa-shopping-cart"></i>  Limpar Carrinho</button>
+              </div>
+        </section>
+      
     </main>
     
     <script src="./scripts/carrinho.js"></script>
