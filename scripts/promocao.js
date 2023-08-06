@@ -12,7 +12,7 @@
 
 // Loop para exibir cada produto do array na página
 const productContainer = document.querySelector("#promocao .product-list");
-products.forEach(product => {
+products.forEach((product, index) => {
     const productItem = document.createElement("div");
  
     productItem.classList.add("product-item");
@@ -34,6 +34,12 @@ products.forEach(product => {
     const buyButton = document.createElement("button");
     buyButton.classList.add("buy-btn");
     buyButton.textContent = "Comprar";
+
+    buyButton.addEventListener("click", () => {
+        //adiciona produto no local storage
+        localStorage.setItem(`selectedProduct_${index}`, JSON.stringify(product));
+        alert('adicionado ao carrinho');
+      });
 
   
     productItem.appendChild(productImage);

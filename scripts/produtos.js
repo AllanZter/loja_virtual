@@ -1,8 +1,8 @@
  // Array de produtos
  const produtos = [
     {name: "Violão",description: "Tagima",price: 99.99,image: "img/hely.svg"},
-    {name: "teclado",description: "Yamaha",price: 49.99,image: "img/hely.svg"},
-    {name: "Guitarra",description: "Fender",price: 49.99,image: "img/hely.svg"},
+    {name: "teclado",description: "Yamaha",price: 49.99,image: "img/produtos/teclado.png"},
+    {name: "Guitarra",description: "Fender",price: 49.99,image: "img/produtos/guitarra.png"},
     {name: "Produto 2",description: "Descrição do Produto 2",price: 49.99,image: "img/hely.svg"},
     {name: "Produto 2",description: "Descrição do Produto 2",price: 49.99,image: "img/hely.svg"},
     {name: "Produto 2",description: "Descrição do Produto 2",price: 49.99,image: "img/hely.svg"},
