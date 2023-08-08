@@ -1,11 +1,11 @@
  // Array de produtos
  const products = [
-    {id: 0, name: "Produto 1",description: "Descrição do Produto 1",price: 99.99,image: "img/hely.svg"},
-    {id: 1, name: "Produto 2",description: "Descrição do Produto 2",price: 49.99,image: "img/hely.svg"},
-    {id: 2, name: "Produto 2",description: "Descrição do Produto 2",price: 49.99,image: "img/hely.svg"},
-    {id: 3, name: "Produto 2",description: "Descrição do Produto 2",price: 49.99,image: "img/hely.svg"},
-    {id: 4, name: "Produto 2",description: "Descrição do Produto 2",price: 49.99,image: "img/hely.svg"},
-    {id: 5, name: "Produto 2",description: "Descrição do Produto 2",price: 49.99,image: "img/hely.svg"},
+    {id: 0, name: "Produto 1",description: "Descrição do Produto 1",price: 99.99,image: "img/produtos/g2.webp"},
+    {id: 1, name: "Produto 2",description: "Descrição do Produto 2",price: 49.99,image: "img/produtos/g3.webp"},
+    {id: 2, name: "Produto 2",description: "Descrição do Produto 2",price: 49.99,image: "img/produtos/g4.webp"},
+    {id: 3, name: "Produto 2",description: "Descrição do Produto 2",price: 49.99,image: "img/produtos/g5.webp"},
+    {id: 4, name: "Produto 2",description: "Descrição do Produto 2",price: 49.99,image: "img/produtos/g6.webp"},
+    {id: 5, name: "Produto 2",description: "Descrição do Produto 2",price: 49.99,image: "img/produtos/g7.webp"},
     
     // Adicione mais produtos aqui
 ];

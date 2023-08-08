@@ -51,9 +51,16 @@ const recuperarItensDoLocalStorage = () => {
         productPrice.classList.add("price");
         productPrice.textContent = `R$ ${product.price.toFixed(2)}`;
 
-        const buyButton = document.createElement("button");
-        buyButton.classList.add("buy-btn");
-        buyButton.textContent = "Remover";
+        const removeButton = document.createElement("button");
+        removeButton.classList.add("buy-btn");
+        removeButton.textContent = "Remover";
+
+        removeButton.addEventListener("click", () => {
+          //remove item do carrinho
+          localStorage.removeItem(`selectedProduct_${product.id}`, JSON.stringify(product));
+          location.reload();
+          
+        });
     
        
       
@@ -61,7 +68,7 @@ const recuperarItensDoLocalStorage = () => {
         productItem.appendChild(productName);
         productItem.appendChild(productDescription);
         productItem.appendChild(productPrice);
-        productItem.appendChild(buyButton);
+        productItem.appendChild(removeButton);
       
         produtosContainer.appendChild(productItem);
         });
