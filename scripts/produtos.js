@@ -1,11 +1,11 @@
  // Array de produtos
  const produtos = [
-    {name: "Violão",description: "Tagima",price: 99.99,image: "img/hely.svg"},
-    {name: "teclado",description: "Yamaha",price: 49.99,image: "img/produtos/teclado.png"},
-    {name: "Guitarra",description: "Fender",price: 49.99,image: "img/produtos/guitarra.png"},
-    {name: "Produto 2",description: "Descrição do Produto 2",price: 49.99,image: "img/hely.svg"},
-    {name: "Produto 2",description: "Descrição do Produto 2",price: 49.99,image: "img/hely.svg"},
-    {name: "Produto 2",description: "Descrição do Produto 2",price: 49.99,image: "img/hely.svg"},
+    {id: 21, name: "Guitarra Sumbust", description: "Guitarra 1", price: 99.99, image: "img/produtos/g2.webp"},
+    {id: 22, name: "Guitarra Preta", description: "Guitarra 2", price: 49.99, image: "img/produtos/g3.webp"},
+    {id: 23, name: "Guitarra",description: "Fender",price: 49.99,image: "img/produtos/guitarra.png"},
+    {id: 24, name: "Guitarra Vermelha",description: "Descrição do Produto 2",price: 49.99,image: "img/produtos/g4.webp"},
+    {id: 25, name: "Guitarra Azul",description: "Descrição do Produto 2",price: 49.99,image: "img/produtos/g5.webp"},
+    {id: 26, name: "Guitarra Verde",description: "Descrição do Produto 2",price: 49.99,image: "img/produtos/g6.webp"},
     
     
     // Adicione mais produtos aqui
@@ -13,7 +13,7 @@
 
 // Loop para exibir cada produto do array na página
 const produtosContainer = document.querySelector("#produtos .product-list");
-produtos.forEach((product, index) => {
+produtos.forEach(product => {
     const productItem = document.createElement("div");
     
     productItem.classList.add("product-item");
@@ -38,7 +38,7 @@ produtos.forEach((product, index) => {
 
     buyButton.addEventListener("click", () => {
         //adiciona produto no local storage
-        localStorage.setItem(`selectedProduct_${index}`, JSON.stringify(product));
+        localStorage.setItem(`selectedProduct_${product.id}`, JSON.stringify(product));
         alert('adicionado ao carrinho');
       });
 

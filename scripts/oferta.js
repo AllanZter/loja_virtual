@@ -1,11 +1,11 @@
  // Array de produtos
  const ofertaproducts = [
-    {name: "Produto 1",description: "Descrição do Produto 1",price: 99.99,image: "img/hely.svg"},
-    {name: "Produto 2",description: "Descrição do Produto 2",price: 49.99,image: "img/hely.svg"},
-    {name: "Produto 2",description: "Descrição do Produto 2",price: 49.99,image: "img/hely.svg"},
-    {name: "Produto 2",description: "Descrição do Produto 2",price: 49.99,image: "img/hely.svg"},
-    {name: "Produto 2",description: "Descrição do Produto 2",price: 49.99,image: "img/hely.svg"},
-    {name: "Produto 2",description: "Descrição do Produto 2",price: 49.99,image: "img/hely.svg"},
+    {id: 11, name: "Produto 1",description: "Descrição do Produto 1",price: 99.99,image: "img/hely.svg"},
+    {id: 12, name: "Produto 2",description: "Descrição do Produto 2",price: 49.99,image: "img/hely.svg"},
+    {id: 13, name: "Produto 2",description: "Descrição do Produto 2",price: 49.99,image: "img/hely.svg"},
+    {id: 14, name: "Produto 2",description: "Descrição do Produto 2",price: 49.99,image: "img/hely.svg"},
+    {id: 15, name: "Produto 2",description: "Descrição do Produto 2",price: 49.99,image: "img/hely.svg"},
+    {id: 16, name: "Produto 2",description: "Descrição do Produto 2",price: 49.99,image: "img/hely.svg"},
     
     
     // Adicione mais produtos aqui
@@ -35,6 +35,13 @@ ofertaproducts.forEach(product => {
     const buyButton = document.createElement("button");
     buyButton.classList.add("buy-btn");
     buyButton.textContent = "Comprar";
+
+    buyButton.addEventListener("click", () => {
+        //adiciona produto no local storage
+        localStorage.setItem(`selectedProduct_${product.id}`, JSON.stringify(product));
+        alert('adicionado ao carrinho');
+      });
+
 
     productItem.appendChild(productImage);
     productItem.appendChild(productName);

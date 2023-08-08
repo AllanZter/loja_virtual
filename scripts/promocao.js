@@ -1,18 +1,18 @@
  // Array de produtos
  const products = [
-    {name: "Produto 1",description: "Descrição do Produto 1",price: 99.99,image: "img/hely.svg"},
-    {name: "Produto 2",description: "Descrição do Produto 2",price: 49.99,image: "img/hely.svg"},
-    {name: "Produto 2",description: "Descrição do Produto 2",price: 49.99,image: "img/hely.svg"},
-    {name: "Produto 2",description: "Descrição do Produto 2",price: 49.99,image: "img/hely.svg"},
-    {name: "Produto 2",description: "Descrição do Produto 2",price: 49.99,image: "img/hely.svg"},
-    {name: "Produto 2",description: "Descrição do Produto 2",price: 49.99,image: "img/hely.svg"},
+    {id: 0, name: "Produto 1",description: "Descrição do Produto 1",price: 99.99,image: "img/hely.svg"},
+    {id: 1, name: "Produto 2",description: "Descrição do Produto 2",price: 49.99,image: "img/hely.svg"},
+    {id: 2, name: "Produto 2",description: "Descrição do Produto 2",price: 49.99,image: "img/hely.svg"},
+    {id: 3, name: "Produto 2",description: "Descrição do Produto 2",price: 49.99,image: "img/hely.svg"},
+    {id: 4, name: "Produto 2",description: "Descrição do Produto 2",price: 49.99,image: "img/hely.svg"},
+    {id: 5, name: "Produto 2",description: "Descrição do Produto 2",price: 49.99,image: "img/hely.svg"},
     
     // Adicione mais produtos aqui
 ];
 
 // Loop para exibir cada produto do array na página
 const productContainer = document.querySelector("#promocao .product-list");
-products.forEach((product, index) => {
+products.forEach(product => {
     const productItem = document.createElement("div");
  
     productItem.classList.add("product-item");
@@ -37,7 +37,7 @@ products.forEach((product, index) => {
 
     buyButton.addEventListener("click", () => {
         //adiciona produto no local storage
-        localStorage.setItem(`selectedProduct_${index}`, JSON.stringify(product));
+        localStorage.setItem(`selectedProduct_${product.id}`, JSON.stringify(product));
         alert('adicionado ao carrinho');
       });
 

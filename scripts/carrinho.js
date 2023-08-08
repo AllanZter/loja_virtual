@@ -50,6 +50,10 @@ const recuperarItensDoLocalStorage = () => {
         const productPrice = document.createElement("span");
         productPrice.classList.add("price");
         productPrice.textContent = `R$ ${product.price.toFixed(2)}`;
+
+        const buyButton = document.createElement("button");
+        buyButton.classList.add("buy-btn");
+        buyButton.textContent = "Remover";
     
        
       
@@ -57,6 +61,7 @@ const recuperarItensDoLocalStorage = () => {
         productItem.appendChild(productName);
         productItem.appendChild(productDescription);
         productItem.appendChild(productPrice);
+        productItem.appendChild(buyButton);
       
         produtosContainer.appendChild(productItem);
         });
