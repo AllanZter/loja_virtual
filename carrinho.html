@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 
     <style>
-        #limpar{
+        .btn{
             margin-top: 15px;
             padding: 10px 20px;
             background-color: #e70e0e;
@@ -20,12 +20,20 @@
             cursor: pointer;
             font-size: 24px;
         }
-        #limpar:hover {
+        .btn:hover {
             background-color: #0056b3;
         }
         #clear{
-            align-items: center;
+            display: flex;
+            justify-content: center;
+
         }
+        #final{
+            display: flex;
+            justify-content: center;
+
+        }
+        
 
     </style>
 </head>
@@ -56,17 +64,23 @@
     <main>
       
         <section id="selectedProducts">
-            <h2 class="section-title"><i class="fas fa-shopping-cart"></i>  Carrinho de Compras</h2>
+            <h2 class="section-title"><i class="fas fa-shopping-cart"></i>    Carrinho de Compras</h2>
             <div class="product-list" id="cart-products">
                 <!-- Aqui serão exibidos os produtos no carrinho -->
             </div>
             
         </section>
-        <section id="button_clear">
+        <section class="button">
               <div id="clear">
-                <button id="limpar"><i class="fas fa-shopping-cart"></i>  Limpar Carrinho</button>
+                <button id="limpar" class="btn"><i class="fas fa-shopping-cart"></i>  Limpar Carrinho</button>
               </div>
         </section>
+
+        <section class="button">
+            <div id="final">
+              <button id="finalizar" class="btn"> Finalizar Compra</button>
+            </div>
+      </section>
       
     </main>
     
